@@ -29,15 +29,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
-    - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v2
-    - uses: nuget/setup-nuget@v2
-      with:
+  
     
-        nuget-version: '5.x'
-    - run: nuget restore ./setup/nvs.sln
-    - run: vcbuild ./setup/build.yml
-      if: ${{ runner.os != 'Linux' }}
     - name: Install packages
       run: npm install --no-optional
 
