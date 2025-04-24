@@ -36,7 +36,7 @@ jobs:
     
         nuget-version: '5.x'
     - run: nuget restore ./setup/nvs.sln
-    - run: vsbuild ./setup/build.yml
+    - run: vcbuild ./setup/build.yml
       if: ${{ runner.os != 'Linux' }}
     - name: Install packages
       run: npm install --no-optional
